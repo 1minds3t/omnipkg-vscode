@@ -1,0 +1,139 @@
+{
+  "name": "omnipkg",
+  "displayName": "Omnipkg",
+  "description": "The Ultimate Python Dependency Resolver - manage packages and Python versions from VS Code",
+  "version": "0.0.3",
+  "publisher": "1minds3t",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "python",
+    "package manager",
+    "dependency resolver",
+    "version management"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "omnipkg.install",
+        "title": "Install Package",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.uninstall",
+        "title": "Uninstall Package",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.switch",
+        "title": "Switch Python Version",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.adopt",
+        "title": "Adopt Python Version",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.list",
+        "title": "List Installed Packages",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.info",
+        "title": "Show Package Info",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.doctor",
+        "title": "Run Environment Doctor",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.heal",
+        "title": "Heal Environment",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.status",
+        "title": "Show Status",
+        "category": "Omnipkg"
+      },
+      {
+        "command": "omnipkg.demo",
+        "title": "Run Demo",
+        "category": "Omnipkg"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "omnipkg.install"
+        },
+        {
+          "command": "omnipkg.uninstall"
+        },
+        {
+          "command": "omnipkg.switch"
+        },
+        {
+          "command": "omnipkg.adopt"
+        },
+        {
+          "command": "omnipkg.list"
+        },
+        {
+          "command": "omnipkg.info"
+        },
+        {
+          "command": "omnipkg.doctor"
+        },
+        {
+          "command": "omnipkg.heal"
+        },
+        {
+          "command": "omnipkg.status"
+        },
+        {
+          "command": "omnipkg.demo"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "esbuild": "^0.21.5",
+    "typescript": "^5.4.5"
+  },
+  "license": "AGPL-3.0-or-later OR Commercial",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1minds3t/omnipkg"
+  },
+  "bugs": {
+    "url": "https://github.com/1minds3t/omnipkg/issues",
+    "email": "omnipkg@proton.me"
+  }
+}
