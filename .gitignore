@@ -45,3 +45,5 @@ htmlcov/
 
 # Project specific
 .cache/
+node_modules/
+dist/
